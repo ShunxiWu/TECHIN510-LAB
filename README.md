@@ -1,179 +1,114 @@
-import streamlit as st
+# Lab 1: Hello Streamlit
 
-st.set_page_config(
-    page_title="Shunxi Wu - UX Design and Product Management",
-    page_icon="👩‍💻",
-    layout="centered",
-    initial_sidebar_state="auto",
-)
+## Goal
 
-col1, col2 = st.columns([0.3, 0.7])
-with col1:
-    st.markdown(
-        """
-    <style>
-    .profile-img img {
-        width: 100%;
-        border-radius: 50%;
-    }
-    </style>
+The goal of this lab is to build a personal website using Streamlit and deploy the website to Azure App Services.
 
-    <div class="profile-img">
-        <img src="https://i.imgur.com/nAAKjBl.jpeg" alt="Profile Image">
-    </div>
-    """,
-        unsafe_allow_html=True,
-    )
-with col2:
-    st.markdown(
-        """
-    # Shunxi Wu
-    shunxiwu@gmail.com • +1 (425)-624-4688 • 248 118th SE #28, Bellevue, WA 98005
+## Instructions
 
-    ## Objective
-    Dedicated to pursuing a career in UX Design and Product Management, leveraging a strong foundation
-    in pharmacy, proficient technical skills, and a proven track record of leadership.
+### Streamlit App
 
-    ## Education
-    - **Master of Human Computer Interaction:** Global Innovation Exchange (GIX) Program
-      Tsinghua University - University of Washington, Expected Graduation: April 2025
-    - **Bachelor of Pharmacy:** Fudan University, Shanghai, China (2018 - 2022)
-      Graduated with a degree in Pharmacy
+1. **Create a New GitHub Repository:**
+   - Create a new GitHub repository for your Streamlit app.
 
-    ## Professional Experience
-    - **Intern, Shanghai Food Inspection Institute, Shanghai, China (July 2020 - September 2020)**
-      - Administered food chemical component inspections, ensuring adherence to standards.
-      - Analyzed data to identify discrepancies and contributed to improved inspection processes.
+2. **Clone the Repository:**
+   - Clone the newly created repository to your local machine.
 
-    ## Leadership in Projects
-    - **PaiPai (2020) Party Planning Software Proposal**
-      - Orchestrated the planning of a party management software.
-      - Delegated tasks and coordinated cross-cultural teams for seamless execution.
-      - Developed and executed strategies to find teams, venues, and specialized party personnel.
+3. **Create a Streamlit App:**
+   - Develop a Streamlit app for your personal website.
+   - Refer to the [Streamlit Documentation](https://docs.streamlit.io/) for guidance.
 
-    - **Wander Flow (2023) AI System and Product**
-      - Led the design and development of the ”Wander Flow” AI system.
-      - Executed machine learning techniques on EEG and heart rate data to enhance study focus.
+4. **Update .gitignore:**
+   - Add the following lines to your `.gitignore` file:
 
-    - **ByeBye Acne (2023 - Present) Acne Diagnosis AI App Startup**
-      - Co-founded a startup focused on AI-driven acne diagnosis.
-      - Engineered AI models for medication recommendations and acne severity classification.
-      - Promoted the app for personalized skincare routines.
+     ```bash
+     venv
+     *.pyc
+     ```
 
-    - **Knee Replacement Rehabilitation Motion Recognition System (Ongoing)**
-      - Currently heading the development of an AI system to recognize post-surgery patient movements using IMU signals.
-      - Streamlined and optimized the rehabilitation process with AI technology.
+5. **Add Requirements:**
+   - Create a `requirements.txt` file with the following content:
 
-    ## Skills and Technologies
-    - Proficient in Python, Arduino, writing AIGC prompt, Fusion360, and Inkscape.
-    - Fluent in Chinese and English, with basic Spanish.
-    - Strong background in project management, data analysis, and AI model development.
+     ```bash
+     # requirements.txt
+     streamlit
+     ```
 
-    ## Additional Information
-    - Contributed expertise to support HIV/AIDS patients at Shanghai HCMC in 2020, offering counseling and educational support.
-    - Avid collector of antique textiles, particularly from the Chinese Miao culture.
-    """
-    )
+6. **Set Up Virtual Environment:**
+   - Activate a virtual environment and install the required dependencies:
 
-# Contact
-st.markdown("# Contact")
+     - **Windows:**
+       ```bash
+       python -m venv venv
+       source venv/Scripts/activate
+       pip install -r requirements.txt
+       ```
 
-# LinkedIn
-col1, col2, col3 = st.columns(3)
+     - **Mac:**
+       ```bash
+       python -m venv venv
+       source venv/bin/activate
+       pip install -r requirements.txt
+       ```
 
-# LinkedIn Logo
-col1.markdown(
-    """
-    <style>
-    .profile-img img {
-        width: 100%;
-        border-radius: 10%;
-    </style>
+7. **Build Your Personal Website:**
+   - Use [Text elements](https://docs.streamlit.io/library/api-reference/text) and [Media elements](https://docs.streamlit.io/library/api-reference/media) to create sections for:
+     - A profile picture
+     - About
+     - Education
+     - Work Experience
+     - Hobbies and Interests
+     - Interesting Projects
 
-    <div class="profile-img">
-        <a href="https://www.linkedin.com/in/shunxi-wu-276022236/" target="_blank">
-            <img src="https://i.imgur.com/OQUXwNp.jpeg" alt="LinkedIn">
-        </a>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
+### Azure
 
-# Facebook Logo
-col2.markdown(
-    """
-    <style>
-    .profile-img img {
-        width: 100%;
-        border-radius: 10%;
-    </style>
+1. **Log into Azure Console:**
+   - Log in to the Azure console.
 
-    <div class="profile-img">
-        <a href="https://www.facebook.com/profile.php?id=100002535667516" target="_blank">
-            <img src="https://i.imgur.com/QQ89Rt3.jpeg" alt="Facebook">
-        </a>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
+2. **Create a Resource Group:**
+   - Create a new Resource Group in the region `West US`.
 
-# GitHub Logo
-col3.markdown(
-    """
-    <style>
-    .profile-img img {
-        width: 100%;
-        border-radius: 10%;
-    </style>
+3. **Create App Service:**
+   - Go to App Service and create a new App Service with the following details:
+     - Name: `<uw username>-techin510-lab1`
+     - Resource Group: Use the one created in step 2
+     - Region: West US
+     - Plan: Create a new one with the F plan (free).
 
-    <div class="profile-img">
-        <a href="https://github.com/ShunxiWu" target="_blank">
-            <img src="https://i.imgur.com/J6LeoUb.png" alt="GitHub">
-        </a>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
+     ![Azure Create App Service](https://prod-files-secure.s3.us-west-2.amazonaws.com/560d3bf2-de5b-4ae7-baeb-d84ccc32d5b1/5f229baa-7c05-409a-82f4-a029c333d2ad/Untitled.png)
 
-# Footer
-ft = """
-<style>
-a:link , a:visited{
-color: #BFBFBF;
-background-color: transparent;
-text-decoration: none;
-}
+4. **Open App Service:**
+   - Open the newly created App Service.
 
-a:hover,  a:active {
-color: #0283C3;
-background-color: transparent;
-text-decoration: underline;
-}
+     ![Azure Open App Service](https://prod-files-secure.s3.us-west-2.amazonaws.com/560d3bf2-de5b-4ae7-baeb-d84ccc32d5b1/328ea02b-cfbc-4b78-afc6-ed7b09004134/Untitled.png)
 
-#page-container {
-  position: relative;
-  min-height: 10vh;
-}
+   - Click "Deployment > Deployment Center".
+     - Connect to your GitHub account.
+     - Connect to your GitHub Repository for Lab1.
+     - Click "Save" (This will make a new commit and push to your repo).
 
-.footer {
-position: relative;
-left: 0;
-top:230px;
-bottom: 0;
-width: 100%;
-background-color: transparent;
-color: #808080;
-text-align: left;
-}
-</style>
+     ![Azure Deployment Center](https://prod-files-secure.s3.us-west-2.amazonaws.com/560d3bf2-de5b-4ae7-baeb-d84ccc32d5b1/ec98ac99-bd43-4206-8d9f-508928da2992/Untitled.png)
 
-<div id="page-container">
+   - Click "Settings > Configuration".
+     - In "Application settings", click "New application setting" to add the following setting:
+       - PORT → 8501
 
-<div class="footer">
-<p style='font-size: 0.875em;'>Made with <a style='display: inline; text-align: left;' href="https://streamlit.io/" target="_blank">Streamlit</a><br 'style= top:3px;'>
-with <img src="https://em-content.zobj.net/source/skype/289/red-heart_2764-fe0f.png" alt="heart" height= "10"/><a style='display: inline; text-align: left;' href="https://github.com/sape94" target="_blank"> by sape94</a></p>
-</div>
+## Example
 
-</div>
-"""
-st.write(ft, unsafe_allow_html=True)
+If you want to see an example, check out [this GitHub repository](https://github.com/ianchen06/techin510-lab1).
+
+## Contributing
+
+If you'd like to contribute to this project:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/your-feature`).
+3. Commit your changes (`git commit -m 'Add your feature'`).
+4. Push to the branch (`git push origin feature/your-feature`).
+5. Open a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+
