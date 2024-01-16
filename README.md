@@ -75,19 +75,17 @@ The goal of this lab is to build a personal website using Streamlit and deploy t
      - Region: West US
      - Plan: Create a new one with the F plan (free).
 
-     ![Azure Create App Service](https://prod-files-secure.s3.us-west-2.amazonaws.com/560d3bf2-de5b-4ae7-baeb-d84ccc32d5b1/5f229baa-7c05-409a-82f4-a029c333d2ad/Untitled.png)
+   
 
 4. **Open App Service:**
    - Open the newly created App Service.
 
-     ![Azure Open App Service](https://prod-files-secure.s3.us-west-2.amazonaws.com/560d3bf2-de5b-4ae7-baeb-d84ccc32d5b1/328ea02b-cfbc-4b78-afc6-ed7b09004134/Untitled.png)
 
    - Click "Deployment > Deployment Center".
      - Connect to your GitHub account.
      - Connect to your GitHub Repository for Lab1.
      - Click "Save" (This will make a new commit and push to your repo).
 
-     ![Azure Deployment Center](https://prod-files-secure.s3.us-west-2.amazonaws.com/560d3bf2-de5b-4ae7-baeb-d84ccc32d5b1/ec98ac99-bd43-4206-8d9f-508928da2992/Untitled.png)
 
    - Click "Settings > Configuration".
      - In "Application settings", click "New application setting" to add the following setting:
